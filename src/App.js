@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import FormComponent from "./components/FormComponent";
+import UserProfile from "./components/UserProfile";
+
+
+const user = {
+  fullName: "N. Modi",
+  email: "example@example.com",
+  phone: "(097) 234-5678",
+  mobile: "(098) 765-4321",
+  address: "Bay Area, San Francisco, CA",
+  job:"soft/ware developer trainee",
+  projectStatus: [
+    { name: "Web Design", progress: 80 },
+    { name: "Website Markup", progress: 72 },
+    { name: "One Page", progress: 89 },
+    { name: "Mobile Template", progress: 55 },
+    { name: "Backend API", progress: 66 }
+  ]
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <UserProfile
+        fullName={user.fullName}
+        email={user.email}
+        phone={user.phone}
+        mobile={user.mobile}
+        address={user.address}
+        projectStatus={user.projectStatus}
+        job={user.job}
+      />
     </div>
   );
 }
 
 export default App;
+
+// function App() {
+//   return (
+//     <div>
+//       <FormComponent/>
+//     </div>
+//   );
+// }
+
+// export default App;
