@@ -1,0 +1,16 @@
+/* .headerer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: whitesmoke;
+    border-top-left-radius:25px;
+    border-top-right-radius:25px;
+    margin-top: 4%;
+    
+  } */
+  
+  .logo {
+    height: 50px;
+  }
+  
+
