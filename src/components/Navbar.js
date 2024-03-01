@@ -4,10 +4,14 @@ import './NavBar.css';
 import ppho from '../avatar.jpg';
 
 const NavBar = () => {
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [dropdownVisible, setDropdownVisible] = useState(false);
 
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
+  const handleMouseEnter = () => {
+    setDropdownVisible(true);
+  };
+
+  const handleMouseLeave = () => {
+    setDropdownVisible(false);
   };
 
   return (
@@ -16,13 +20,13 @@ const NavBar = () => {
         <div className="logo-container">
           <img src={logo} alt="Logo" className="logo" height="50" />
         </div>
-        <div className="profile-container" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
+        <div className="profile-container" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <img
             src={ppho}
             alt="Profile"
             className="profile-photo"
           />
-          {showDropdown && (
+          {dropdownVisible && (
             <ul className="dropdown-menu">
               <li>Profile</li>
               <li>Dashboard</li>
